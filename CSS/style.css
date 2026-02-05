@@ -1,0 +1,449 @@
+:root {
+    --purple-bg: #b7b4f4;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+
+/* --- CONTENEDOR MORADO SUPERIOR --- */
+.top-section {
+    background-color: var(--purple-bg);
+    position: relative;
+}
+
+.border {
+    margin: 0px 20px 0px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 5%;
+    color: var(--black);
+    font-weight: bold;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: var(--white);
+    margin-left: 20px;
+}
+
+/* --- HERO & PARALLAX (SIN ESPACIOS VACÍOS) --- */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    position: relative;
+}
+
+.parallax-wrapper {
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    justify-content: center;
+}
+
+.parallax-img {
+    width: 90%;
+    height: auto;
+    /* Efecto parallax suave al hacer scroll */
+    position: sticky;
+    top: 100px;
+}
+
+.social-links {
+    width: 85%;
+    max-width: 1100px;
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+    font-weight: bold;
+    color: var(--black);
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-item img { width: 50px; }
+
+/* --- SECCIÓN SOBRE MÍ (BLANCO) --- */
+.about {
+    background-color: var(--white);
+    padding: 80px 0 0px 0;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+}
+
+.about-text h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    margin-bottom: 1.5rem;
+}
+
+.text-content p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* --- FOTO PERSONAL (SOBRESALIENTE) --- */
+.about-image {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.profile-frame {
+    width: 100%;
+    max-width: 550px; /* Ajustamos el ancho para que se luzca el diseño original */
+    /* Eliminamos border-radius y overflow para que se vea cuadrada/original */
+    transform: translateY(-200px); /* Mantiene la elevación sobre el morado */
+    z-index: 5;
+    transition: transform 0.3s ease;
+}
+
+.profile-frame img {
+    width: 100%;
+    height: auto; /* Mantiene la proporción original de tu imagen */
+    object-fit: contain; /* Asegura que no se corte ninguna parte */
+    filter: grayscale(100%);
+}
+
+.profile-frame:hover img {
+    filter: grayscale(0%);
+}
+
+/* --- RESPONSIVO --- */
+
+@media (max-width: 1024px) {
+    .profile-frame {
+        max-width: 350px;
+        transform: translateY(-150px);
+    }
+    .top-section { padding-bottom: 60px; }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-image {
+        order: -1; /* La foto va arriba del texto en móvil */
+    }
+
+    .profile-frame {
+        max-width: 90%;
+        transform: translateY(-80px);
+        margin-bottom: -40px;
+    }
+
+    .social-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .social-item img { width: 20px; }
+}
+
+
+/* --- SECCIÓN TECNOLOGÍAS --- */
+.tech {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--white);
+}
+
+.tech-title {
+    font-weight: bold;
+    color: #8F8F8F;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+}
+
+.tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px; /* Espaciado entre iconos */
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.tech-icon {
+    width: 80px; /* Tamaño del contenedor */
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.tech-icon img {
+    width: 100%;
+    height: auto;
+    max-height: 60px; /* Mantiene uniformidad */
+    object-fit: contain;
+    filter: grayscale(100%); /* Efecto gris por defecto */
+    opacity: 0.7;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+/* Efecto al pasar el cursor */
+.tech-icon:hover img {
+    filter: grayscale(0%); /* Vuelve a su color original */
+    opacity: 1;
+}
+
+.tech-icon:hover {
+    transform: translateY(-5px); /* Pequeño salto para dar vida */
+}
+
+.stack-text {
+    font-family: 'Square Peg', cursive;
+  
+    font-size: 2.9rem;
+    color: var(--black);
+    margin: 30px 30px 0px 30px;
+}
+
+/* --- RESPONSIVO PARA TECNOLOGÍAS --- */
+@media (max-width: 768px) {
+    .tech-grid {
+        gap: 25px; /* Menos espacio en móviles */
+    }
+
+    .tech-icon {
+        width: 60px; /* Iconos más pequeños en móvil */
+    }
+    
+    .tech-title {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+}
+
+
+/* --- SECCIÓN CONTACTO --- */
+.floating-title {
+    position: relative;
+    display: inline-block;
+    transform: translateY(-120px); /* Lo eleva para que flote sobre la sección blanca */
+    z-index: 10;
+    margin-bottom: -80px; /* Compensa el espacio para que el form no quede tan lejos */
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(3rem, 8vw, 5rem); /* Tamaño grande y responsivo */
+    font-weight: 900;
+    color: var(--black);
+}
+/* --- CONTENEDOR DE INFO Y LOGO --- */
+
+.contact-info-container {
+    display: flex;
+    align-items: center; /* Alinea verticalmente al centro */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.name{
+    font-size: 20px;
+}
+
+.contact-text {
+    text-align: left;
+    color: var(--black);
+    line-height: 1.4;
+    font-weight: bold;
+}
+
+
+
+.contact-text .name {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-size: 30px;
+    color: var(--white);
+}
+
+.contact-logo img {
+    width: 80px; /* Ajusta según el tamaño de tu logo */
+    height: auto;
+}
+
+.contact {
+    background-color: var(--purple-bg); /* Fondo morado para que la imagen resalte al flotar */
+    padding: 70px 0 30px 0;
+    margin-top: 150px; /* Espacio para que la ilustración no choque con lo de arriba */
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    position: relative;
+}
+
+.contact-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: var(--black);
+}
+
+/* Estilos Formulario */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.input-field, .textarea-field {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--white);
+    font-family: 'Poppins', sans-serif;
+}
+
+.textarea-field {
+    height: 220px;
+    resize: none;
+}
+
+/* Botón a la derecha */
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+
+.btn-send {
+    background-color: #FDB3C5;
+    color: var(--white);
+    font-size: 25px;
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.btn-send:hover {
+    opacity: 0.8;
+}
+
+.contact-info {
+    margin-top: 2rem;
+    color: var(--black);
+    line-height: 1.6;
+}
+
+/* --- ILUSTRACIÓN FLOTANTE --- */
+.contact-illustration {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.contact-illustration img {
+    max-width: 500px;
+    height: auto;
+    /* Efecto igual a la foto personal */
+    transform: translateY(-200px); 
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));
+}
+
+/* --- FOOTER --- */
+.main-footer {
+    background-color: var(--purple-bg);
+    text-align: center;
+    padding: 2rem;
+    color: var(--black);
+    font-weight: bold;
+}
+
+/* --- RESPONSIVO CONTACTO --- */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .contact-illustration {
+        order: -1; /* Imagen arriba en móviles */
+    }
+
+    .contact-illustration img {
+        transform: translateY(-150px);
+        max-width: 300px;
+    }
+
+    .button-container {
+        justify-content: center;
+    }
+
+    .btn-send {
+        width: 100%; /* Botón grande en móvil para UX */
+    }
+    
+    .contact-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* --- AJUSTES RESPONSIVOS --- */
+@media (max-width: 768px) {
+    .floating-title {
+        transform: translateY(-80px); /* Menos elevación en móvil */
+        margin-bottom: -40px;
+        font-size: 3rem;
+    }
+
+    .contact-info-container {
+        justify-content: center; /* Centra todo en móvil */
+        flex-direction: row; /* Mantiene el logo al lado incluso en móvil */
+    }
+}
