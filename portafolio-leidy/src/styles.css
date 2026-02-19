@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=TuFuente:wght@400;700&display=swap');
+
+:root {
+    --purple-bg: #b7b4f4;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+html, body {
+    overflow-x: hidden; /* Corta cualquier cosa que intente salirse por la derecha */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}

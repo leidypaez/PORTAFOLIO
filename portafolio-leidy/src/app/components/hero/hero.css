@@ -1,0 +1,227 @@
+/* --- HERO & PARALLAX (SIN ESPACIOS VACÍOS) --- */
+.hero {
+    background-color: var(--purple-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    position: relative;
+}
+
+.parallax-wrapper {
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    justify-content: center;
+}
+
+.parallax-img {
+    width: 90%;
+    height: auto;
+    /* Efecto parallax suave al hacer scroll */
+    position: sticky;
+    top: 100px;
+}
+
+.social-links {
+    width: 85%;
+    max-width: 1100px;
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+    font-weight: bold;
+    color: var(--black);
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-item img { 
+    width: 50px; 
+}
+
+@media (max-width: 768px) {
+
+    .social-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .social-item img { width: 20px; }
+}
+
+/* --- SECCIÓN SOBRE MÍ (BLANCO) --- */
+.about {
+    background-color: var(--white);
+    padding: 80px 0 0px 0;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+}
+
+.about-text h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    margin-bottom: 1.5rem;
+}
+
+.text-content p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* --- FOTO PERSONAL (SOBRESALIENTE) --- */
+.about-image {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.profile-frame {
+    width: 100%;
+    max-width: 550px; /* Ajustamos el ancho para que se luzca el diseño original */
+    /* Eliminamos border-radius y overflow para que se vea cuadrada/original */
+    transform: translateY(-200px); /* Mantiene la elevación sobre el morado */
+    z-index: 5;
+    transition: transform 0.3s ease;
+}
+
+.profile-frame img {
+    width: 100%;
+    height: auto; /* Mantiene la proporción original de tu imagen */
+    object-fit: contain; /* Asegura que no se corte ninguna parte */
+    filter: grayscale(100%);
+}
+
+.profile-frame:hover img {
+    filter: grayscale(0%);
+}
+
+/* --- RESPONSIVO --- */
+
+@media (max-width: 1024px) {
+    .profile-frame {
+        max-width: 350px;
+        transform: translateY(-150px);
+    }
+    .top-section { padding-bottom: 60px; }
+}
+
+/* --- SECCIÓN TECNOLOGÍAS --- */
+.tech {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--white);
+}
+
+.tech-title {
+    font-weight: bold;
+    color: #8F8F8F;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+}
+
+.tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px; /* Espaciado entre iconos */
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.tech-icon {
+    width: 80px; /* Tamaño del contenedor */
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.tech-icon img {
+    width: 100%;
+    height: auto;
+    max-height: 60px; /* Mantiene uniformidad */
+    object-fit: contain;
+    filter: grayscale(100%); /* Efecto gris por defecto */
+    opacity: 0.7;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+/* Efecto al pasar el cursor */
+.tech-icon:hover img {
+    filter: grayscale(0%); /* Vuelve a su color original */
+    opacity: 1;
+}
+
+.tech-icon:hover {
+    transform: translateY(-5px); /* Pequeño salto para dar vida */
+}
+
+.stack-text {
+    font-family: 'Square Peg', cursive;
+  
+    font-size: 2.9rem;
+    color: var(--black);
+    margin: 30px 30px 0px 30px;
+}
+
+/* --- RESPONSIVO PARA TECNOLOGÍAS --- */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        /* Aumentamos el espacio entre la foto y el texto */
+        gap: 3.5rem; 
+        text-align: center;
+        /* Espacio arriba para que no pegue con la sección anterior */
+        padding-top: 2rem; 
+    }
+
+    .about-image {
+        grid-row: 1;
+        /* Le damos un margen abajo a la foto para que respire */
+        margin-bottom: 1rem; 
+    }
+
+    .about-text {
+        grid-row: 2;
+    }
+
+    /* Opcional: Para que la foto no quede gigante en el cel */
+    .about-image img {
+        max-width: 280px; 
+        margin: 0 auto;
+    }
+
+    .tech-grid {
+        gap: 25px; /* Menos espacio en móviles */
+    }
+
+    .tech-icon {
+        width: 60px; /* Iconos más pequeños en móvil */
+    }
+    
+    .tech-title {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+}

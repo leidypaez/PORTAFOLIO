@@ -1,0 +1,49 @@
+:root {
+    --purple-bg: #b7b4f4;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+/* --- CONTENEDOR MORADO SUPERIOR --- */
+.top-section {
+    background-color: var(--purple-bg);
+    position: relative;
+}
+
+.border {
+    margin: 0px 20px 0px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 5%;
+    color: var(--black);
+    font-weight: bold;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: var(--white);
+    margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
