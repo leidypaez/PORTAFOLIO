@@ -1,0 +1,24 @@
+/* --- HERO & PARALLAX (SIN ESPACIOS VACÍOS) --- */
+.hero {
+    background-color: #FDB3C5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0 0 0;
+    position: relative;
+}
+
+.parallax-wrapper {
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    justify-content: center;
+}
+
+.parallax-img {
+    width: 90%;
+    height: auto;
+    /* Efecto parallax suave al hacer scroll */
+    position: sticky;
+    top: 100px;
+}

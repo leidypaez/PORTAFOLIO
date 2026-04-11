@@ -2,6 +2,7 @@
     --purple-bg: #b7b4f4;
     --white: #ffffff;
     --black: #000000;
+    --pink: #FDB3C5;
 }
 
 * {
@@ -20,6 +21,12 @@ body {
 .top-section {
     background-color: var(--purple-bg);
     position: relative;
+    transition: background-color 0.3s ease;
+}
+
+/* Color especial para Proyectos */
+.navbar-rosa {
+  background-color: #FDB3C5 !important; /* El rosa exacto de tu diseño */
 }
 
 .border {

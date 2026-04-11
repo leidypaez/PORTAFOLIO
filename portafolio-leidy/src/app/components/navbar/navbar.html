@@ -1,11 +1,11 @@
 <div class="border"></div>
     <div class="top-section">
-        <header class="navbar">
+        <header class="navbar" [ngClass]= "{'navbar-rosa': router.url === '/proyectos'}">
             <div class="logo">LGP | DISEÑADORA | PROGRAMADORA</div>
             <nav>
                 <a href="#home">HOME</a>
                 <a href="#sobre-mi">SOBRE MI</a>
-                <a href="#proyectos">PROYECTOS</a>
+                <a href="proyectos">PROYECTOS</a>
                 <a href="#contactame">CONTÁCTAME</a>
             </nav>
         </header>
